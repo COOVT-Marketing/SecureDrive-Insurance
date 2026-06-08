@@ -17,7 +17,6 @@
     </head>
     <body>
 
-        <!-- NAVBAR -->
         <nav class="navbar">
             <div class="nav-inner">
                 <div class="nav-brand">
@@ -28,7 +27,6 @@
             </div>
         </nav>
 
-        <!-- HERO -->
         <section class="hero" id="Home">
             <div class="hero-overlay"></div>
             <div class="hero-inner">
@@ -99,10 +97,13 @@
                                 </div>
                             </div>
                             <input type="hidden" id="user_ip" name="user_ip" value="">
+                            
                             <input type="hidden" name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl" value="" />
                             <input type="hidden" name="xxTrustedFormToken" id="xxTrustedFormToken_0" value="" />
                             <input type="hidden" name="xxTrustedFormPingUrl" id="xxTrustedFormPingUrl_0" value="" />
                             
+                            <input type="hidden" id="leadid_token" name="jornaya_leadid" value="" />
+                             
                             <button type="submit" class="submit-btn">
                                 <span class="btn-text">Get a Quote</span>
                                 <span class="btn-arrow">&#8594;</span>
@@ -129,7 +130,6 @@
             </div>
         </section>
 
-        <!-- TRUST BAR -->
         <div class="trust-bar">
             <div class="trust-inner">
                 <span>&#10003;&nbsp; No Spam, Ever</span>
@@ -140,7 +140,6 @@
             </div>
         </div>
 
-        <!-- HOW IT WORKS -->
         <section class="how-it-works">
             <div class="section-inner">
                 <div class="section-label">THE PROCESS</div>
@@ -167,7 +166,6 @@
             </div>
         </section>
 
-        <!-- WHY CHOOSE US -->
         <section class="why-choose-us">
             <div class="why-inner">
                 <div class="why-image-col">
@@ -208,7 +206,6 @@
             </div>
         </section>
 
-        <!-- COVERAGE TYPES -->
         <section class="coverage-section">
             <div class="section-inner">
                 <div class="section-label">WHAT WE COVER</div>
@@ -235,7 +232,7 @@
                         <p>Need an SR-22 certificate? We work with carriers who specialize in high-risk drivers.</p>
                     </div>
                     <div class="coverage-card">
-                        <div class="cc-icon">&#128690;</div>
+                        <div class="cc-icon">&#128660;</div>
                         <h4>Uninsured Motorist</h4>
                         <p>Shields you from drivers who carry no insurance or insufficient limits when they hit you.</p>
                     </div>
@@ -248,7 +245,6 @@
             </div>
         </section>
 
-        <!-- CTA BANNER -->
         <section class="cta-banner">
             <div class="cta-banner-inner">
                 <div class="cta-banner-text">
@@ -262,7 +258,6 @@
             </div>
         </section>
 
-        <!-- FOOTER -->
         <footer class="main-footer">
             <div class="footer-container">
                 <div class="footer-brand">
@@ -280,7 +275,6 @@
             </div>
         </footer>
 
-        <!-- MODAL -->
         <div id="legalModal" class="modal">
             <div class="modal-content">
                 <span class="close-btn">&times;</span>
@@ -288,7 +282,12 @@
             </div>
         </div>
 
-        <noscript><img src="https://api.trustedform.com/ns.gif" /></noscript>
+        <noscript><img src="https://api.trustedform.com/ns.gif" alt="" /></noscript>
+        
+        <noscript>
+            <img src="https://createid.jornaya.com/noscript.gif?app_key=YOUR_CAMPAIGN_KEY" style="display:none;" alt="" />
+        </noscript>
+        
         <script src="script.js"></script>
     </body>
 </html>
