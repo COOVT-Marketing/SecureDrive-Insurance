@@ -1,6 +1,8 @@
 /* ==========================================
-   1. TRUSTEDFORM INITIALIZATION
+   1. COMPLIANCE TRACKING INITIALIZATION (TRUSTEDFORM & JORNAYA)
    ========================================== */
+
+// --- TrustedForm Snippet ---
 (function() {
   var tf = document.createElement('script');
   tf.type = 'text/javascript';
@@ -10,6 +12,25 @@
     new Date().getTime() + Math.random();
   var s = document.getElementsByTagName('script')[0]; 
   s.parentNode.insertBefore(tf, s);
+})();
+
+// --- Jornaya LeadiD Snippet ---
+(function() {
+    var field = 'leadid_token'; // Points to the ID of your hidden input field
+    var provide = 'https://createid.jornaya.com';
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.async = true;
+    
+    // REMINDER: Replace 'YOUR_CAMPAIGN_KEY' with your production key when ActiveProspect provisions it
+    script.src = provide + '/script.js?app_key=YOUR_CAMPAIGN_KEY&field=' + field;
+    
+    var s = document.getElementsByTagName('script')[0];
+    if (s) {
+        s.parentNode.insertBefore(script, s);
+    } else {
+        document.head.appendChild(script);
+    }
 })();
 
 /* ==========================================
@@ -210,14 +231,17 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const formData = {
-                name:           document.getElementById("name").value,
-                phone:          document.getElementById("phone").value,
-                state:          document.getElementById("state").value,
-                zip:            document.getElementById("zip").value,
-                ipAddress:      userIp,
-                xxTrustedFormUrl: document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "",
+                name:                 document.getElementById("name").value,
+                phone:                document.getElementById("phone").value,
+                state:                document.getElementById("state").value,
+                zip:                  document.getElementById("zip").value,
+                ipAddress:            userIp,
+                xxTrustedFormUrl:     document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "",
                 xxTrustedFormPingUrl: document.querySelector('input[name="xxTrustedFormPingUrl"]')?.value || "",
-                xxTrustedFormToken: (document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "").split('/').pop()
+                xxTrustedFormToken:   (document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "").split('/').pop(),
+                
+                // --- CAPTURE JORNAYA ID FIELD VALUE ---
+                jornayaLeadId:        document.getElementById("leadid_token")?.value || ""
             };
 
             console.log("Submitting to SecureDrive:", formData);
