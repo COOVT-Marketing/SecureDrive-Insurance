@@ -141,42 +141,6 @@ const legalData = {
 
         <h3>7. Contact Information</h3>
         <p>Questions regarding these Terms of Use should be directed to: <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a></p>
-    `,
-    partners: `
-        <div class="partners-modal">
-            <h2>Marketing Partners</h2>
-            <p class="partners-updated">Last Updated: April 30, 2026</p>
-            <p>When you submit a quote request through SecureDrive Insurance, you consent to being contacted by SecureDrive Insurance and one or more of the Marketing Partners listed below regarding auto insurance products and services. This list is reviewed and updated periodically.</p>
-
-            <h3>Current Partners</h3>
-            <ul class="partners-list">
-                <li>Progressive Casualty Insurance Company</li>
-                <li>GEICO General Insurance Company</li>
-                <li>State Farm Mutual Automobile Insurance Company</li>
-                <li>Allstate Insurance Company</li>
-                <li>Liberty Mutual Insurance</li>
-                <li>Nationwide Mutual Insurance Company</li>
-                <li>Farmers Insurance Exchange</li>
-                <li>Travelers Indemnity Company</li>
-                <li>American Family Mutual Insurance</li>
-                <li>The General Automobile Insurance</li>
-                <li>Direct Auto Insurance</li>
-                <li>National General Insurance</li>
-                <li>Mercury Insurance Group</li>
-                <li>Root Insurance Company</li>
-                <li>QuoteWizard LLC</li>
-                <li>MediaAlpha, Inc.</li>
-                <li>EverQuote, Inc.</li>
-                <li>SmartFinancial Insurance</li>
-            </ul>
-            <p class="partners-placeholder-note">This list reflects our active data-sharing partners as of the date above and is reviewed periodically. If you believe a listed partner is inaccurate or outdated, please contact us at <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a>.</p>
-
-            <h3>How This Works</h3>
-            <p>Marketing Partners are licensed insurance agents, carriers, brokers, or affiliate networks who may contact you by phone, text, or email to provide a quote or follow up on your request. They are contractually required to use your information only for these purposes and to comply with the TCPA and other applicable privacy and telemarketing laws.</p>
-
-            <h3>Your Choices</h3>
-            <p>To stop receiving communications from any Marketing Partner, follow the opt-out instructions they provide, reply "STOP" to text messages, or contact us directly at <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a>.</p>
-        </div>
     `
 };
 
