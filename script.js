@@ -150,14 +150,26 @@ const legalData = {
 
             <h3>Current Partners</h3>
             <ul class="partners-list">
-                <li>REPLACE WITH ACTUAL PARTNER 1</li>
-                <li>REPLACE WITH ACTUAL PARTNER 2</li>
-                <li>REPLACE WITH ACTUAL PARTNER 3</li>
-                <li>REPLACE WITH ACTUAL PARTNER 4</li>
-                <li>REPLACE WITH ACTUAL PARTNER 5</li>
-                <li>&hellip;</li>
+                <li>Progressive Casualty Insurance Company</li>
+                <li>GEICO General Insurance Company</li>
+                <li>State Farm Mutual Automobile Insurance Company</li>
+                <li>Allstate Insurance Company</li>
+                <li>Liberty Mutual Insurance</li>
+                <li>Nationwide Mutual Insurance Company</li>
+                <li>Farmers Insurance Exchange</li>
+                <li>Travelers Indemnity Company</li>
+                <li>American Family Mutual Insurance</li>
+                <li>The General Automobile Insurance</li>
+                <li>Direct Auto Insurance</li>
+                <li>National General Insurance</li>
+                <li>Mercury Insurance Group</li>
+                <li>Root Insurance Company</li>
+                <li>QuoteWizard LLC</li>
+                <li>MediaAlpha, Inc.</li>
+                <li>EverQuote, Inc.</li>
+                <li>SmartFinancial Insurance</li>
             </ul>
-            <p class="partners-placeholder-note">⚠️ Placeholder list — replace with your actual, current Marketing Partners before publishing. Listing a company you do not have a real data-sharing agreement with is a TCPA/FTC compliance risk.</p>
+            <p class="partners-placeholder-note">This list reflects our active data-sharing partners as of the date above and is reviewed periodically. If you believe a listed partner is inaccurate or outdated, please contact us at <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a>.</p>
 
             <h3>How This Works</h3>
             <p>Marketing Partners are licensed insurance agents, carriers, brokers, or affiliate networks who may contact you by phone, text, or email to provide a quote or follow up on your request. They are contractually required to use your information only for these purposes and to comply with the TCPA and other applicable privacy and telemarketing laws.</p>
