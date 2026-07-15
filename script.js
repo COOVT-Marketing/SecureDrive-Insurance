@@ -141,6 +141,29 @@ const legalData = {
 
         <h3>7. Contact Information</h3>
         <p>Questions regarding these Terms of Use should be directed to: <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a></p>
+    `,
+    partners: `
+        <h2>Marketing Partners</h2>
+        <p><strong>Last Updated: April 30, 2026</strong></p>
+        <p>SecureDrive Insurance is an advertising and lead-generation platform. We do not sell insurance directly. Instead, when you submit your information, we may share it with a network of trusted <strong>Marketing Partners</strong> who help match you with relevant insurance products and quotes.</p>
+
+        <h3>Who Our Marketing Partners Are</h3>
+        <p>Our Marketing Partners may include:</p>
+        <ul>
+            <li>Licensed insurance agents, agencies, and brokers</li>
+            <li>Insurance carriers and underwriters</li>
+            <li>Affiliate marketing networks and lead aggregators</li>
+            <li>Call centers and telemarketing partners who may contact you on our behalf</li>
+        </ul>
+
+        <h3>What They Do With Your Information</h3>
+        <p>Marketing Partners may contact you by phone, text, or email to provide insurance quotes, follow up on your request, or offer related products and services. They are contractually required to use your information only for these purposes and to comply with applicable telemarketing and privacy laws, including the TCPA.</p>
+
+        <h3>Your Choices</h3>
+        <p>You may opt out of communications from any Marketing Partner at any time by following the opt-out instructions they provide, replying "STOP" to text messages, or contacting us directly at <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a>.</p>
+
+        <h3>Request Our Current Partner List</h3>
+        <p>A full, current list of active Marketing Partners is available upon request. Contact us at <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a> for details.</p>
     `
 };
 
@@ -196,10 +219,13 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.remove("modal-open");
     };
 
-    document.querySelectorAll('a[href="privacy.html"], a[href="terms.html"]').forEach((link) => {
+    document.querySelectorAll('a[href="privacy.html"], a[href="terms.html"], a[href="#partners"]').forEach((link) => {
         link.addEventListener("click", (e) => {
             e.preventDefault();
-            openModal(link.getAttribute("href").includes("privacy") ? "privacy" : "terms");
+            const href = link.getAttribute("href");
+            if (href.includes("privacy")) openModal("privacy");
+            else if (href.includes("terms")) openModal("terms");
+            else openModal("partners");
         });
     });
 
