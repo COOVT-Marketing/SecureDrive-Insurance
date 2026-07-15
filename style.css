@@ -1,5 +1,5 @@
 /* =============================================
-   SECUREDRIVE INSURANCE - Style
+   SECUREDRIVE INSURANCE
    Palette: warm ivory #FBF9F4 · deep emerald #0F5C46
    ============================================= */
 
@@ -962,12 +962,12 @@ body.modal-open footer {
 }
 
 .partners-placeholder-note {
-    background: rgba(192, 57, 43, 0.08);
-    border: 1px solid rgba(192, 57, 43, 0.25);
+    background: var(--primary-tint);
+    border: 1px solid var(--border);
     border-radius: var(--radius-sm);
     padding: 0.75rem 1rem;
     font-size: 0.8rem;
-    color: #7a2e22;
+    color: var(--muted);
     margin-bottom: 1.25rem;
 }
 
