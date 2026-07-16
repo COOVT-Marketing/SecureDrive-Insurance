@@ -174,7 +174,7 @@ const legalData = {
         <div class="ccpa-badge">California Residents</div>
         <h2>CCPA Notice</h2>
         <p><strong>Last Updated: April 30, 2026</strong></p>
-        <p>This notice supplements our <a href="#" onclick="document.querySelector('.close-btn').click(); setTimeout(() => document.querySelector('a[href=\\'privacy.html\\']').click(), 200); return false;">Privacy Policy</a> and applies solely to California residents under the California Consumer Privacy Act ("CCPA") and the California Privacy Rights Act ("CPRA").</p>
+        <p>This notice supplements our <a href="privacy.html">Privacy Policy</a> and applies solely to California residents under the California Consumer Privacy Act ("CCPA") and the California Privacy Rights Act ("CPRA").</p>
 
         <h3>Categories of Information We Collect</h3>
         <ul>
@@ -242,12 +242,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- Modal ---
+    // Privacy, Terms, Opt-Out, and CCPA all open through this exact same function —
+    // same overlay, same panel styling, same open/close behavior.
     const openModal  = (type) => {
         modalBody.innerHTML = legalData[type];
         modal.classList.add("active");
         document.body.classList.add("modal-open");
 
-        // Attach opt-out form handler fresh each time it's rendered into the modal
+        // Re-bind links rendered *inside* the modal body (e.g. "Opt-Out Form" link
+        // inside the Privacy Policy) so they open the correct modal too.
+        modalBody.querySelectorAll('a[href="privacy.html"], a[href="terms.html"], a[href="#optout"], a[href="#ccpa"]').forEach((link) => {
+            link.addEventListener("click", handleLegalLinkClick);
+        });
+
+        // Attach the opt-out form handler fresh each time it's rendered
         if (type === "optout") {
             const optOutForm = document.getElementById("optOutForm");
             if (optOutForm) {
@@ -255,20 +263,23 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
     };
+
     const closeModal = () => {
         modal.classList.remove("active");
         document.body.classList.remove("modal-open");
     };
 
+    const handleLegalLinkClick = (e) => {
+        e.preventDefault();
+        const href = e.currentTarget.getAttribute("href");
+        if (href.includes("privacy")) openModal("privacy");
+        else if (href.includes("terms")) openModal("terms");
+        else if (href.includes("optout")) openModal("optout");
+        else if (href.includes("ccpa")) openModal("ccpa");
+    };
+
     document.querySelectorAll('a[href="privacy.html"], a[href="terms.html"], a[href="#optout"], a[href="#ccpa"]').forEach((link) => {
-        link.addEventListener("click", (e) => {
-            e.preventDefault();
-            const href = link.getAttribute("href");
-            if (href.includes("privacy")) openModal("privacy");
-            else if (href.includes("terms")) openModal("terms");
-            else if (href.includes("optout")) openModal("optout");
-            else if (href.includes("ccpa")) openModal("ccpa");
-        });
+        link.addEventListener("click", handleLegalLinkClick);
     });
 
     if (closeBtn) closeBtn.onclick = closeModal;
@@ -350,7 +361,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             const formData = {
-                submissionType:       "SALE_FORM",
                 name:                 document.getElementById("name").value,
                 phone:                document.getElementById("phone").value,
                 state:                document.getElementById("state").value,
@@ -364,7 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 jornayaLeadId:        document.getElementById("leadid_token")?.value || ""
             };
 
-            console.log("Submitting to Secure Drive:", formData);
+            console.log("Submitting to SecureDrive:", formData);
 
             try {
                 await fetch(scriptURL, {
