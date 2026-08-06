@@ -1156,22 +1156,6 @@ body.modal-open footer {
     line-height: 1.5;
 }
 
-.hero-alt-link {
-    display: block;
-    margin-top: 1.5rem;
-    font-size: 0.82rem;
-    color: var(--muted);
-    text-align: center;
-}
-
-.hero-alt-link a {
-    color: var(--primary-dark);
-    font-weight: 700;
-    text-decoration: underline;
-}
-
-.hero-alt-link a:hover { color: var(--primary); }
-
 @media (max-width: 768px) {
     .call-card-number { font-size: 1.6rem; }
 }
