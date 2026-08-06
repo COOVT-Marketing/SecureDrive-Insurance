@@ -360,6 +360,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 console.error("IP Fetch failed:", err);
             }
 
+            // Keep the hidden user_ip field in sync with the fetched IP
+            // (this field exists in the form markup but was previously never set)
+            const userIpField = document.getElementById("user_ip");
+            if (userIpField) userIpField.value = userIp;
+
             const formData = {
                 name:                 document.getElementById("name").value,
                 phone:                document.getElementById("phone").value,
