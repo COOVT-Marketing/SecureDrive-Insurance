@@ -399,4 +399,43 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+
+    /* ==========================================
+       7. CLICK-TO-CALL TRACKING (quotes page)
+       ========================================== */
+    const callNowBtn = document.getElementById("callNowBtn");
+    if (callNowBtn) {
+        callNowBtn.addEventListener("click", () => {
+            (async () => {
+                let userIp = "Unknown";
+                try {
+                    const res  = await fetch("https://api.ipify.org?format=json");
+                    const data = await res.json();
+                    userIp = data.ip;
+                } catch (err) {
+                    console.error("IP Fetch failed:", err);
+                }
+
+                const clickData = {
+                    submissionType:       "CLICK_TO_CALL",
+                    ipAddress:            userIp,
+                    pageUrl:              window.location.href,
+                    xxTrustedFormUrl:     document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "",
+                    xxTrustedFormPingUrl: document.querySelector('input[name="xxTrustedFormPingUrl"]')?.value || "",
+                    xxTrustedFormToken:   (document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "").split('/').pop(),
+                    jornayaLeadId:        document.getElementById("leadid_token")?.value || ""
+                };
+
+                try {
+                    await fetch(scriptURL, {
+                        method: "POST",
+                        mode: "no-cors",
+                        body: JSON.stringify(clickData),
+                    });
+                } catch (err) {
+                    console.error("Click-to-call log failed:", err);
+                }
+            })();
+        });
+    }
 });
