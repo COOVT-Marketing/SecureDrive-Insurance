@@ -25,6 +25,12 @@
             </div>
         </nav>
 
+        <!-- compliance fields, no form wrapper needed -->
+        <input type="hidden" name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl" value="" />
+        <input type="hidden" name="xxTrustedFormToken" id="xxTrustedFormToken_0" value="" />
+        <input type="hidden" name="xxTrustedFormPingUrl" id="xxTrustedFormPingUrl_0" value="" />
+        <input type="hidden" id="leadid_token" name="jornaya_leadid" value="" />
+
         <main>
 
         <section class="hero" id="Home">
@@ -38,8 +44,8 @@
                         <span>Right now.</span>
                     </h1>
                     <p class="hero-sub">
-                        Talk to a licensed agent directly and get a real auto insurance quote
-                        in one phone call — no typing, no waiting on a callback.
+                        Get an actual person on the phone who can walk you through your
+                        options — no typing, no waiting on an email back.
                     </p>
                     <div class="hero-buttons">
                         <a href="tel:8888888888" class="btn-call">
@@ -48,24 +54,24 @@
                     </div>
                 </div>
 
-                <div class="hero-right">
-                    <div class="form-container">
+                <div class="hero-right hero-right--call">
+                    <div class="form-container call-card-container">
                         <div class="form-header">
                             <h3>Talk to a Licensed Agent</h3>
                         </div>
                         <div class="call-card-body">
                             <p class="call-card-sub">
-                                Tap to call and get matched with top-rated carriers in your
-                                state — usually in under five minutes.
+                                One call gets you someone who can answer questions and
+                                pull quotes while you're on the line.
                             </p>
-                            <a href="tel:8888888888" class="submit-btn call-card-btn">
+                            <a href="tel:8888888888" id="callNowBtn" class="submit-btn call-card-btn">
                                 <span class="btn-text">Click here to get a Quote!</span>
                                 <span class="btn-arrow">&#8594;</span>
                             </a>
                             <ul class="call-card-list">
-                                <li><span class="check">&#10003;</span> Speak with a real person, right away</li>
+                                <li><span class="check">&#10003;</span> Talk to someone who knows your state's carriers</li>
                                 <li><span class="check">&#10003;</span> Licensed agents available 5 days a week</li>
-                                <li><span class="check">&#10003;</span> Cheaper quote</li>
+                                <li><span class="check">&#10003;</span> Ask questions before you decide on anything</li>
                             </ul>
                         </div>
                     </div>
@@ -90,7 +96,7 @@
                     <div class="step">
                         <div class="step-num">01</div>
                         <h4>Give Us a Call</h4>
-                        <p>Click to call now and you'll be connected with a licensed agent directly.</p>
+                        <p>Dial in and you'll have someone on the line right away.</p>
                     </div>
                     <div class="step-connector"></div>
                     <div class="step">
@@ -191,7 +197,7 @@
             <div class="cta-banner-inner">
                 <div class="cta-banner-text">
                     <h2>Start Your Journey to Affordable<br /><span>Car Insurance!</span></h2>
-                    <p>Give us a call now, no-obligation quote. Protect your vehicle, save money, and drive with peace of mind.</p>
+                    <p>Ready when you are — give us a call and we'll take it from there.</p>
                 </div>
                 <div class="cta-banner-actions">
                     <a href="tel:8888888888" class="btn-primary">Call Now</a>
@@ -226,6 +232,12 @@
                 <div id="modalBody"></div>
             </div>
         </div>
+
+        <noscript><img src="https://api.trustedform.com/ns.gif" alt="" /></noscript>
+
+        <noscript>
+            <img src="https://createid.jornaya.com/noscript.gif?app_key=YOUR_CAMPAIGN_KEY" style="display:none;" alt="" />
+        </noscript>
 
         <script src="/script.js"></script>
     </body>
