@@ -12,7 +12,7 @@
         <link rel="icon" type="image/png" href="images/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Big+Shoulders+Display:wght@600;700;800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
         <link rel="stylesheet" href="style.css" />
     </head>
     <body>
@@ -33,14 +33,17 @@
             <div class="hero-inner">
 
                 <div class="hero-left">
-                    <div class="badge">&#10003;&nbsp; Trusted by 250,000+ Drivers Nationwide</div>
+                    <div class="badge">
+                        <span class="badge-num">30+</span>
+                        <span class="badge-label">Carriers compared per quote</span>
+                    </div>
                     <h1 class="hero-title">
-                        Insurance built for the<br />
-                        <span>modern driver.</span>
+                        Auto insurance,<br />
+                        <span>without the runaround.</span>
                     </h1>
                     <p class="hero-sub">
-                        Secure your journey with tailored auto coverage that moves at your speed.
-                        Compare top-rated carriers in minutes — no fluff, no hidden fees.
+                        Tell us where you drive and what you drive. We'll line up quotes from
+                        carriers licensed in your state so you can compare real numbers, not guesses.
                     </p>
                     <div class="hero-buttons">
                         <a href="tel:7403019588" class="btn-call">
@@ -56,6 +59,7 @@
                     <div class="form-container">
                         <form id="leadForm">
                             <div class="form-header">
+                                <div class="form-eyebrow">Quote Request</div>
                                 <h3>Get Your Fast Quote</h3>
                             </div>
 
@@ -90,13 +94,13 @@
                                 </div>
                             </div>
                             <input type="hidden" id="user_ip" name="user_ip" value="">
-                            
+
                             <input type="hidden" name="xxTrustedFormCertUrl" id="xxTrustedFormCertUrl" value="" />
                             <input type="hidden" name="xxTrustedFormToken" id="xxTrustedFormToken_0" value="" />
                             <input type="hidden" name="xxTrustedFormPingUrl" id="xxTrustedFormPingUrl_0" value="" />
-                            
+
                             <input type="hidden" id="leadid_token" name="jornaya_leadid" value="" />
-                             
+
                             <button type="submit" class="submit-btn">
                                 <span class="btn-text">Get a Quote</span>
                                 <span class="btn-arrow">&#8594;</span>
@@ -133,18 +137,14 @@
 
         <div class="trust-bar">
             <div class="trust-inner">
-                <span>&#10003;&nbsp; No Spam, Ever</span>
-                <span>&#10003;&nbsp; Instant Comparison</span>
-                <span>&#10003;&nbsp; 100% Free Service</span>
-                <span>&#10003;&nbsp; SSL Encrypted</span>
-                <span>&#10003;&nbsp; State-Licensed Agents</span>
+                <p><strong>No spam.</strong> No sold-off data. Just a licensed agent, an SSL-encrypted form, and quotes from carriers who actually write policies in your state.</p>
             </div>
         </div>
 
         <section class="how-it-works">
             <div class="section-inner">
-                <div class="section-label">THE PROCESS</div>
-                <h2 class="section-title">Three steps to better coverage</h2>
+                <div class="section-label">The Process</div>
+                <h2 class="section-title">Three stops to better coverage</h2>
                 <div class="steps-grid">
                     <div class="step">
                         <div class="step-num">01</div>
@@ -177,23 +177,20 @@
                         class="why-image"
                     />
                     <div class="why-badge">
-                        <span class="why-badge-num">250K+</span>
-                        <span class="why-badge-label">Happy Drivers</span>
+                        <span class="why-badge-num">4 min</span>
+                        <span class="why-badge-label">Avg. quote time</span>
                     </div>
                 </div>
                 <div class="why-text-col">
                     <div class="section-tag">
                         <span class="line"></span>
-                        <span class="tag-text">WHY</span>
+                        <span class="tag-text">Why</span>
                     </div>
                     <h2 class="why-heading">Why Choose Us?</h2>
                     <p class="why-body">
-                        We understand that every driver has unique needs. That's why we offer
-                        customized car insurance solutions to fit your lifestyle and budget.
-                        Whether you need basic coverage or comprehensive protection, our expert
-                        team is here to help you every step of the way. With years of industry
-                        experience, we've partnered with trusted insurance providers to bring
-                        you the best deals.
+                        Every driver's situation is different — a clean record, a recent ticket,
+                        a teen on the policy. Instead of one flat rate, we shop your details
+                        against a real carrier network and hand you the options that actually fit.
                     </p>
                     <ul class="why-list">
                         <li><span class="check">&#10003;</span> Compare 30+ top-rated insurance carriers side-by-side</li>
@@ -209,36 +206,81 @@
 
         <section class="coverage-section">
             <div class="section-inner">
-                <div class="section-label">WHAT WE COVER</div>
-                <h2 class="section-title">Built for every road, every driver.</h2>
+                <div class="coverage-intro-row">
+                    <div>
+                        <div class="section-label">What We Cover</div>
+                        <h2 class="section-title">Built for every road, every driver.</h2>
+                    </div>
+                    <p>Six coverage types, mixed and matched to your state's requirements and your own risk tolerance.</p>
+                </div>
                 <div class="coverage-grid">
                     <div class="coverage-card">
-                        <div class="cc-icon">&#128663;</div>
+                        <div class="cc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 20l2.5-8a3 3 0 0 1 2.9-2.2h11.2a3 3 0 0 1 2.9 2.2L27 20" />
+                                <rect x="4" y="20" width="24" height="6" rx="1.5" />
+                                <circle cx="9.5" cy="26" r="1.6" />
+                                <circle cx="22.5" cy="26" r="1.6" />
+                                <path d="M9 14h14" />
+                            </svg>
+                        </div>
                         <h4>Liability Coverage</h4>
                         <p>Protects you when you're at fault — covering bodily injury and property damage to others.</p>
                     </div>
                     <div class="coverage-card">
-                        <div class="cc-icon">&#128737;</div>
+                        <div class="cc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M16 4l10 4v7c0 7-4.5 11.5-10 13-5.5-1.5-10-6-10-13V8z" />
+                                <path d="M12.5 16.5l2.5 2.5 4.5-5" />
+                            </svg>
+                        </div>
                         <h4>Collision Coverage</h4>
                         <p>Pays to repair or replace your vehicle after a collision, regardless of who is at fault.</p>
                     </div>
                     <div class="coverage-card">
-                        <div class="cc-icon">&#9928;</div>
+                        <div class="cc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M9 21a5 5 0 0 1-1-9.9 6.5 6.5 0 0 1 12.6-2.3A5.5 5.5 0 0 1 23 19" />
+                                <path d="M11 25l-1.5 3M16 25l-1.5 3M21 25l-1.5 3" />
+                            </svg>
+                        </div>
                         <h4>Comprehensive Coverage</h4>
                         <p>Covers non-collision events: theft, vandalism, floods, fire, and falling objects.</p>
                     </div>
                     <div class="coverage-card">
-                        <div class="cc-icon">&#128203;</div>
+                        <div class="cc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="7" y="5" width="18" height="23" rx="2" />
+                                <path d="M12 5V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v1" />
+                                <path d="M11 13h10M11 17h10M11 21h6" />
+                            </svg>
+                        </div>
                         <h4>SR-22 / High-Risk</h4>
                         <p>Need an SR-22 certificate? We work with carriers who specialize in high-risk drivers.</p>
                     </div>
                     <div class="coverage-card">
-                        <div class="cc-icon">&#128660;</div>
+                        <div class="cc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M5 19l2.3-7.5A3 3 0 0 1 10.2 9.5h9.6a3 3 0 0 1 2.9 2l2.3 7.5" />
+                                <rect x="4" y="19" width="24" height="6" rx="1.5" />
+                                <circle cx="9.5" cy="25" r="1.5" />
+                                <circle cx="22.5" cy="25" r="1.5" />
+                                <path d="M16 3v5M13 6h6" />
+                            </svg>
+                        </div>
                         <h4>Uninsured Motorist</h4>
                         <p>Shields you from drivers who carry no insurance or insufficient limits when they hit you.</p>
                     </div>
                     <div class="coverage-card">
-                        <div class="cc-icon">&#128667;</div>
+                        <div class="cc-icon" aria-hidden="true">
+                            <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 21V12h11v9" />
+                                <path d="M15 15h6l4 4v2h-2" />
+                                <circle cx="10" cy="22.5" r="2" />
+                                <circle cx="22" cy="22.5" r="2" />
+                                <path d="M4 17h5" />
+                            </svg>
+                        </div>
                         <h4>Roadside Assistance</h4>
                         <p>24/7 towing, battery jumps, lockout service, and emergency fuel delivery added to your plan.</p>
                     </div>
@@ -249,8 +291,8 @@
         <section class="cta-banner">
             <div class="cta-banner-inner">
                 <div class="cta-banner-text">
-                    <h2>Start Your Journey to Affordable<br /><span>Car Insurance!</span></h2>
-                    <p>Complete a quick form and get a free, no-obligation quote. Protect your vehicle, save money, and drive with peace of mind.</p>
+                    <h2>Ready when you are —<br /><span>let's get you a rate.</span></h2>
+                    <p>Two minutes, one form, real quotes back. No pressure to buy anything today.</p>
                 </div>
                 <div class="cta-banner-actions">
                     <a href="#leadForm" class="btn-primary">Get Quotes Now</a>
@@ -287,11 +329,11 @@
         </div>
 
         <noscript><img src="https://api.trustedform.com/ns.gif" alt="" /></noscript>
-        
+
         <noscript>
             <img src="https://createid.jornaya.com/noscript.gif?app_key=YOUR_CAMPAIGN_KEY" style="display:none;" alt="" />
         </noscript>
-        
+
         <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="script.js"></script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v4513226cdae34746b4dedf0b4dfa099e1781791509496" integrity="sha512-ZE9pZaUXND66v380QUtch/5sE9tPFh2zg45pR2PB0CVkCtOREv2AJKkSidISWkysEuQ0EH8faUU5du78bx87UQ==" data-cf-beacon='{"version":"2024.11.0","token":"a89002147d5f42ea9d8d5845d06a3f2c","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
