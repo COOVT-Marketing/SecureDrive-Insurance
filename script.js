@@ -16,13 +16,12 @@
 
 // --- Jornaya LeadiD Snippet ---
 (function() {
-    var field = 'leadid_token'; // Points to the ID of your hidden input field
+    var field = 'leadid_token';
     var provide = 'https://createid.jornaya.com';
     var script = document.createElement('script');
     script.type = 'text/javascript';
     script.async = true;
     
-    // REMINDER: Replace 'YOUR_CAMPAIGN_KEY' with your production key when ActiveProspect provisions it
     script.src = provide + '/script.js?app_key=YOUR_CAMPAIGN_KEY&field=' + field;
     
     var s = document.getElementsByTagName('script')[0];
@@ -37,114 +36,6 @@
    2. LEGAL DATA
    ========================================== */
 const legalData = {
-    privacy: `
-        <h2>Privacy Policy</h2>
-        <p><strong>Last Updated: April 30, 2026</strong></p>
-        <p>Your privacy is important to us. This Privacy Policy explains how Secure Drive Insurance ("we," "us," or "our") collects, uses, shares, and protects your information when you use our website and services. By using this website, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use the site.</p>
-
-        <h3>1. Who We Are</h3>
-        <p>Secure Drive Insurance is an <strong>advertising and affiliate marketing website</strong> that connects users with third-party licensed insurance providers. We are <strong>not an insurance carrier</strong> and do not issue or underwrite insurance policies.</p>
-
-        <h3>2. Information We Collect</h3>
-        <p>We collect personal information you voluntarily provide when you fill out a form or otherwise interact with our site. This may include:</p>
-        <ul>
-            <li>Full name</li>
-            <li>Phone number</li>
-            <li>Email address</li>
-            <li>Zip code</li>
-            <li>Vehicle-related or insurance-related information</li>
-            <li>IP address and geolocation</li>
-            <li>Device, browser, and usage data</li>
-        </ul>
-        <p>We may also use cookies and tracking technologies for analytics and retargeting purposes.</p>
-
-        <h3>3. Consent and Verification Technologies</h3>
-        <p>We use <strong>Jornaya</strong> and <strong>TrustedForm</strong> to capture and verify consumer consent. These tools record your interaction with our website to ensure compliance with <strong>TCPA (Telephone Consumer Protection Act)</strong> regulations. These recordings and tokens help confirm when and how you provided consent to be contacted.</p>
-
-        <h3>4. How We Use or Share Your Information</h3>
-        <p>We use the information we collect to:</p>
-        <ul>
-            <li>Connect you with third-party insurance providers or partners</li>
-            <li>Send quotes or contact you with relevant services</li>
-            <li>Improve website performance and user experience</li>
-            <li>Ensure legal compliance and verify consent</li>
-            <li>Communicate with you via phone, text, or email</li>
-        </ul>
-        <p>We may share your information with:</p>
-        <ul>
-            <li>Licensed insurance providers and agents</li>
-            <li>Affiliate marketing partners</li>
-            <li>Service providers who support our operations (e.g., hosting, analytics)</li>
-            <li>Legal authorities if required by law</li>
-        </ul>
-        <p>We <strong>do not sell</strong> your personal data to unrelated third parties for unrelated marketing purposes.</p>
-
-        <h3>5. Your Choices and Rights</h3>
-        <p>You have the right to:</p>
-        <ul>
-            <li>Opt-out of marketing communications</li>
-            <li>Request access to the personal data we hold about you</li>
-            <li>Request correction or deletion of your data (as permitted by law)</li>
-        </ul>
-        <p>To exercise any of these rights, please use our <a href="#optout">Opt-Out Form</a> or contact us at <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a>.</p>
-
-        <h3>6. Cookies and Tracking Technologies</h3>
-        <p>We use cookies and other tracking technologies to monitor site performance, analyze user behavior, and customize advertising campaigns. You can control cookie preferences through your browser settings.</p>
-
-        <h3>7. Data Security</h3>
-        <p>We implement appropriate technical and organizational measures to protect your personal information from unauthorized access, disclosure, or misuse. However, no method of transmission over the Internet is 100% secure. We cannot guarantee absolute security.</p>
-
-        <h3>8. Third-Party Websites</h3>
-        <p>Our website may contain links to third-party sites. We are not responsible for the privacy practices or content of those sites. Please review their policies before submitting personal information.</p>
-
-        <h3>9. Children's Privacy</h3>
-        <p>Our services are not intended for individuals under the age of 18. We do not knowingly collect information from children.</p>
-
-        <h3>10. California Residents</h3>
-        <p>If you are a California resident, additional rights apply to you under the CCPA. See our <a href="#ccpa">CCPA Notice</a> for details.</p>
-
-        <h3>11. Policy Updates</h3>
-        <p>We reserve the right to update this Privacy Policy at any time. Changes will be posted on this page with an updated effective date. Your continued use of the site constitutes acceptance of those changes.</p>
-
-        <h3>12. Contact Us</h3>
-        <p>If you have any questions or concerns regarding this Privacy Policy, please contact us at <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a>.</p>
-    `,
-    terms: `
-        <h2>Terms of Use</h2>
-        <p><strong>Effective Date: April 30, 2026</strong></p>
-        <p>Welcome to <strong>Secure Drive Insurance</strong>. By accessing or using our website, you agree to be bound by these Terms of Use. If you do not agree to these terms, please discontinue use of the site immediately.</p>
-
-        <h3>1. Description of Service</h3>
-        <p>Secure Drive Insurance provides a platform that connects consumers with third-party insurance agents, brokers, and carriers. We are an administrative and marketing entity and:</p>
-        <ul>
-            <li>Do not provide insurance quotes directly</li>
-            <li>Do not underwrite or issue insurance policies</li>
-            <li>Do not guarantee that any partner will provide a specific quote</li>
-        </ul>
-
-        <h3>2. TCPA Consent &amp; Communication</h3>
-        <p>By submitting your phone number and information, you provide express written consent to be contacted via telephone, automated dialing systems, artificial/pre-recorded messages, or text messages by <strong>Secure Drive Insurance</strong> and <strong>our partners</strong>.</p>
-        <ul>
-            <li>Consent is not a condition of purchase</li>
-            <li>Message and data rates may apply</li>
-            <li>You may opt-out at any time using our <a href="#optout">Opt-Out Form</a> or by replying "STOP" to text messages</li>
-        </ul>
-
-        <h3>3. User Eligibility</h3>
-        <p>To use this website, you must be at least 18 years of age and a resident of the United States. By using this site, you represent that all information you provide is accurate and belongs to you.</p>
-
-        <h3>4. Intellectual Property</h3>
-        <p>All content, logos, designs, and code on this website are the property of <strong>Secure Drive Insurance</strong> and are protected by copyright and trademark laws. You may not copy, redistribute, or use our branding without express written permission.</p>
-
-        <h3>5. Limitation of Liability</h3>
-        <p>Secure Drive Insurance is not liable for any damages arising from your use of this site or any services provided by third-party partners. We provide the site "as is" without any warranties of any kind.</p>
-
-        <h3>6. Dispute Resolution</h3>
-        <p>Any dispute arising out of or relating to these Terms shall be resolved through binding individual arbitration. You waive the right to participate in class-action lawsuits or class-wide arbitrations.</p>
-
-        <h3>7. Contact Information</h3>
-        <p>Questions regarding these Terms of Use should be directed to: <a href="mailto:info@securedrive-insurance.com">info@securedrive-insurance.com</a></p>
-    `,
     optout: `
         <h2>Opt-Out Request</h2>
         <p>You are always in control of how we and our partners contact you. Use the form below to revoke consent and stop future marketing communications from Secure Drive Insurance.</p>
@@ -174,7 +65,7 @@ const legalData = {
         <div class="ccpa-badge">California Residents</div>
         <h2>CCPA Notice</h2>
         <p><strong>Last Updated: April 30, 2026</strong></p>
-        <p>This notice supplements our <a href="privacy.html">Privacy Policy</a> and applies solely to California residents under the California Consumer Privacy Act ("CCPA") and the California Privacy Rights Act ("CPRA").</p>
+        <p>This notice supplements our <a href="/privacy">Privacy Policy</a> and applies solely to California residents under the California Consumer Privacy Act ("CCPA") and the California Privacy Rights Act ("CPRA").</p>
 
         <h3>Categories of Information We Collect</h3>
         <ul>
@@ -242,20 +133,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // --- Modal ---
-    // Privacy, Terms, Opt-Out, and CCPA all open through this exact same function —
-    // same overlay, same panel styling, same open/close behavior.
     const openModal  = (type) => {
         modalBody.innerHTML = legalData[type];
         modal.classList.add("active");
         document.body.classList.add("modal-open");
-
-        // Re-bind links rendered *inside* the modal body (e.g. "Opt-Out Form" link
-        // inside the Privacy Policy) so they open the correct modal too.
-        modalBody.querySelectorAll('a[href="privacy.html"], a[href="terms.html"], a[href="#optout"], a[href="#ccpa"]').forEach((link) => {
+        modalBody.querySelectorAll('a[href="#optout"], a[href="#ccpa"]').forEach((link) => {
             link.addEventListener("click", handleLegalLinkClick);
         });
-
-        // Attach the opt-out form handler fresh each time it's rendered
         if (type === "optout") {
             const optOutForm = document.getElementById("optOutForm");
             if (optOutForm) {
@@ -272,18 +156,17 @@ document.addEventListener("DOMContentLoaded", () => {
     const handleLegalLinkClick = (e) => {
         e.preventDefault();
         const href = e.currentTarget.getAttribute("href");
-        if (href.includes("privacy")) openModal("privacy");
-        else if (href.includes("terms")) openModal("terms");
-        else if (href.includes("optout")) openModal("optout");
+        if (href.includes("optout")) openModal("optout");
         else if (href.includes("ccpa")) openModal("ccpa");
     };
-
-    document.querySelectorAll('a[href="privacy.html"], a[href="terms.html"], a[href="#optout"], a[href="#ccpa"]').forEach((link) => {
+    document.querySelectorAll('a[href="#optout"], a[href="#ccpa"]').forEach((link) => {
         link.addEventListener("click", handleLegalLinkClick);
     });
 
     if (closeBtn) closeBtn.onclick = closeModal;
     window.onclick = (e) => { if (e.target === modal) closeModal(); };
+    if (window.location.hash === "#optout") openModal("optout");
+    else if (window.location.hash === "#ccpa") openModal("ccpa");
 
     /* ==========================================
        5. OPT-OUT FORM SUBMISSION
@@ -349,8 +232,6 @@ document.addEventListener("DOMContentLoaded", () => {
             btnText.innerText  = "PROCESSING...";
             btn.disabled       = true;
             btn.style.opacity  = "0.7";
-
-            // Fetch IP Address
             let userIp = "Unknown";
             try {
                 const res  = await fetch("https://api.ipify.org?format=json");
@@ -359,9 +240,6 @@ document.addEventListener("DOMContentLoaded", () => {
             } catch (err) {
                 console.error("IP Fetch failed:", err);
             }
-
-            // Keep the hidden user_ip field in sync with the fetched IP
-            // (this field exists in the form markup but was previously never set)
             const userIpField = document.getElementById("user_ip");
             if (userIpField) userIpField.value = userIp;
 
@@ -374,8 +252,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 xxTrustedFormUrl:     document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "",
                 xxTrustedFormPingUrl: document.querySelector('input[name="xxTrustedFormPingUrl"]')?.value || "",
                 xxTrustedFormToken:   (document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "").split('/').pop(),
-                
-                // --- CAPTURE JORNAYA ID FIELD VALUE ---
                 jornayaLeadId:        document.getElementById("leadid_token")?.value || ""
             };
 

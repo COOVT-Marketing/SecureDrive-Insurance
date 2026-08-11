@@ -1,15 +1,8 @@
-/* =============================================
-   SECUREDRIVE INSURANCE
-   Palette: warm ivory #FBF9F4 · deep emerald #0F5C46
-   Signature: mile-marker numbering + insurance-card tag,
-   drawn from the road / policy-card vocabulary of the subject.
-   ============================================= */
-
 :root {
     --primary:       #0F5C46;
     --primary-dark:  #0B4234;
     --primary-tint:  #E4EFE9;
-    --route:         #B5722C; /* muted signpost amber — used sparingly, only on markers/dividers */
+    --route:         #B5722C;
     --route-tint:    #F3E4D2;
     --bg:            #FBF9F4;
     --bg-alt:        #F1ECDF;
@@ -144,9 +137,6 @@ body {
     animation: fadeUp 0.8s ease both;
 }
 
-/* Route strip — a small dashed underline motif instead of a rounded
-   "trusted by" pill. Reads like a stat you'd find on a policy summary,
-   not a marketing badge. */
 .badge {
     display: inline-flex;
     align-items: baseline;
@@ -255,7 +245,7 @@ body {
     transform: translateX(4px);
 }
 
-/* Hero Right — Form, styled like a policy card */
+/* Hero Right — Form,*/
 .hero-right {
     flex: 0 0 380px;
     max-width: 100%;
@@ -271,8 +261,6 @@ body {
     position: relative;
 }
 
-/* punched-card perforation along the top edge of the quote card —
-   a nod to a physical insurance card / ticket stub */
 .form-container::before {
     content: '';
     position: absolute;
@@ -437,8 +425,6 @@ input:focus:valid {
 .partners-link:hover { color: var(--primary); }
 
 /* ── TRUST BAR ───────────────────────────────── */
-/* A single readable line rather than a row of identical checkmarked
-   pills — set as running text so it doesn't scan as a template block. */
 .trust-bar {
     background: var(--bg-alt);
     border-bottom: 1px solid var(--border);
@@ -492,7 +478,7 @@ input:focus:valid {
     text-align: center;
 }
 
-/* ── HOW IT WORKS — mile-marker treatment ────── */
+/* ── HOW IT WORKS — */
 .how-it-works {
     background: var(--bg-alt);
     border-top: 1px solid var(--border);
@@ -527,8 +513,6 @@ input:focus:valid {
     transform: translateY(-4px);
 }
 
-/* mile-marker tag: small signpost-style rectangle, not a giant faint
-   numeral — the number reads like a route marker, not decoration */
 .step-num {
     display: inline-flex;
     align-items: center;
@@ -595,8 +579,6 @@ input:focus:valid {
     filter: saturate(1.02) brightness(1.02);
 }
 
-/* policy-card style tag instead of a circular vanity-stat badge —
-   angled like a stapled card corner, states a concrete, checkable fact */
 .why-badge {
     position: absolute;
     top: 1.5rem;
@@ -1005,10 +987,7 @@ body.modal-open footer {
 .modal-content::-webkit-scrollbar-track { background: #f0f0f0; border-radius: 10px; }
 .modal-content::-webkit-scrollbar-thumb { background: #ccc; border-radius: 10px; }
 
-/* ── STANDALONE LEGAL PAGES (Privacy / Terms) ────
-   Reuses the same document typography as the modal (above), but as
-   a full page: a small header band, then the policy card on the
-   ivory background, so it matches the rest of the site's rhythm. */
+/* ── LEGAL PAGES (Privacy / Terms) ──── */
 .legal-hero {
     background: var(--bg-alt);
     border-bottom: 1px solid var(--border);
@@ -1307,7 +1286,7 @@ body.modal-open footer {
     .call-card-number { font-size: 1.6rem; }
 }
 
-/* ── CLICK-TO-CALL — larger container (page-specific) ───── */
+/* ── CLICK-TO-CALL — (page-specific) ───── */
 .hero-right--call {
     flex: 0 0 460px;
 }
