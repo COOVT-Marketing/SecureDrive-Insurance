@@ -1,5 +1,5 @@
 /* ==========================================
-   1. COMPLIANCE TRACKING INITIALIZATION (TRUSTEDFORM & JORNAYA)
+   1. COMPLIANCE TRACKING INITIALIZATION (TRUSTEDFORM)
    ========================================== */
 
 // --- TrustedForm Snippet ---
@@ -12,24 +12,6 @@
     new Date().getTime() + Math.random();
   var s = document.getElementsByTagName('script')[0]; 
   s.parentNode.insertBefore(tf, s);
-})();
-
-// --- Jornaya LeadiD Snippet ---
-(function() {
-    var field = 'leadid_token';
-    var provide = 'https://createid.jornaya.com';
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.async = true;
-    
-    script.src = provide + '/script.js?app_key=YOUR_CAMPAIGN_KEY&field=' + field;
-    
-    var s = document.getElementsByTagName('script')[0];
-    if (s) {
-        s.parentNode.insertBefore(script, s);
-    } else {
-        document.head.appendChild(script);
-    }
 })();
 
 /* ==========================================
@@ -219,63 +201,68 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    /* ==========================================
-       6. LEAD FORM SUBMISSION
-       ========================================== */
-    if (leadForm) {
-        leadForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
+/* ==========================================
+   6. LEAD FORM SUBMISSION (WITH META LEAD EVENT)
+   ========================================== */
+if (leadForm) {
+    leadForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
 
-            const btn          = leadForm.querySelector(".submit-btn");
-            const btnText      = btn.querySelector(".btn-text");
-            const originalText = btnText.innerText;
-            btnText.innerText  = "PROCESSING...";
-            btn.disabled       = true;
-            btn.style.opacity  = "0.7";
-            let userIp = "Unknown";
-            try {
-                const res  = await fetch("https://api.ipify.org?format=json");
-                const data = await res.json();
-                userIp = data.ip;
-            } catch (err) {
-                console.error("IP Fetch failed:", err);
+        const btn          = leadForm.querySelector(".submit-btn");
+        const btnText      = btn.querySelector(".btn-text");
+        const originalText = btnText.innerText;
+        btnText.innerText  = "PROCESSING...";
+        btn.disabled       = true;
+        btn.style.opacity  = "0.7";
+        let userIp = "Unknown";
+        try {
+            const res  = await fetch("https://api.ipify.org?format=json");
+            const data = await res.json();
+            userIp = data.ip;
+        } catch (err) {
+            console.error("IP Fetch failed:", err);
+        }
+        const userIpField = document.getElementById("user_ip");
+        if (userIpField) userIpField.value = userIp;
+
+        const formData = {
+            name:                 document.getElementById("name").value,
+            phone:                document.getElementById("phone").value,
+            state:                document.getElementById("state").value,
+            zip:                  document.getElementById("zip").value,
+            ipAddress:            userIp,
+            xxTrustedFormUrl:     document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "",
+            xxTrustedFormPingUrl: document.querySelector('input[name="xxTrustedFormPingUrl"]')?.value || "",
+            xxTrustedFormToken:   (document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "").split('/').pop(),
+            jornayaLeadId:        document.getElementById("leadid_token")?.value || ""
+        };
+
+        console.log("Submitting to SecureDrive:", formData);
+
+        try {
+            await fetch(scriptURL, {
+                method: "POST",
+                mode: "no-cors",
+                body: JSON.stringify(formData),
+            });
+
+            // --- META PIXEL LEAD EVENT TRIGGER ---
+            if (typeof fbq === 'function') {
+                fbq('track', 'Lead');
             }
-            const userIpField = document.getElementById("user_ip");
-            if (userIpField) userIpField.value = userIp;
 
-            const formData = {
-                name:                 document.getElementById("name").value,
-                phone:                document.getElementById("phone").value,
-                state:                document.getElementById("state").value,
-                zip:                  document.getElementById("zip").value,
-                ipAddress:            userIp,
-                xxTrustedFormUrl:     document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "",
-                xxTrustedFormPingUrl: document.querySelector('input[name="xxTrustedFormPingUrl"]')?.value || "",
-                xxTrustedFormToken:   (document.querySelector('input[name="xxTrustedFormCertUrl"]')?.value || "").split('/').pop(),
-                jornayaLeadId:        document.getElementById("leadid_token")?.value || ""
-            };
-
-            console.log("Submitting to SecureDrive:", formData);
-
-            try {
-                await fetch(scriptURL, {
-                    method: "POST",
-                    mode: "no-cors",
-                    body: JSON.stringify(formData),
-                });
-                alert("Success! Your quote request has been received.");
-                leadForm.reset();
-            } catch (err) {
-                console.error("Submission error:", err);
-                alert("There was an issue submitting your request. Please try again.");
-            } finally {
-                btnText.innerText = originalText;
-                btn.disabled      = false;
-                btn.style.opacity = "1";
-            }
-        });
-    }
-
+            alert("Success! Your quote request has been received.");
+            leadForm.reset();
+        } catch (err) {
+            console.error("Submission error:", err);
+            alert("There was an issue submitting your request. Please try again.");
+        } finally {
+            btnText.innerText = originalText;
+            btn.disabled      = false;
+            btn.style.opacity = "1";
+        }
+    });
+}
     /* ==========================================
        7. CLICK-TO-CALL TRACKING (quotes page)
        ========================================== */
